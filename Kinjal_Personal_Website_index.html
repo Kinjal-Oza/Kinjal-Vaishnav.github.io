@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kinjal Vaishnav</title>
+<meta name="description" content="Kinjal Vaishnav — Site Reliability Engineer, IEEE Senior Member, independent researcher on multi-agent LLM systems for infrastructure observability.">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Kinjal Vaishnav — Site Reliability Engineer & Independent Researcher">
+<meta property="og:description" content="IEEE Senior Member. Independent research on multi-agent LLM systems for infrastructure observability and predictive GPU failure detection.">
+<meta property="og:image" content="https://kinjalvaishnav.com/Kinjal_Personal_Website_headshot.jpg">
+<meta property="og:url" content="https://kinjalvaishnav.com/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Kinjal Vaishnav — Site Reliability Engineer & Independent Researcher">
+<meta name="twitter:description" content="IEEE Senior Member. Independent research on multi-agent LLM systems for infrastructure observability.">
+<meta name="twitter:image" content="https://kinjalvaishnav.com/Kinjal_Personal_Website_headshot.jpg">
+<!-- NOTE: og:image / og:url above assume the kinjalvaishnav.com custom domain. If you publish
+     to kinjal-oza.github.io instead (or before the custom domain is live), swap both URLs to
+     match, or link previews on LinkedIn/Slack/etc. will silently fail to load the image. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Kinjal Vaishnav",
+  "jobTitle": "Site Reliability Engineer III",
+  "worksFor": { "@type": "Organization", "name": "Oracle Cloud Infrastructure" },
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "Northeastern University" },
+    { "@type": "CollegeOrUniversity", "name": "University of Mumbai" }
+  ],
+  "sameAs": [
+    "https://linkedin.com/in/kinjalozavaishnav",
+    "https://github.com/Kinjal-Oza",
+    "https://orcid.org/0009-0005-6073-1117"
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0f2c46;
+    --teal: #1c5c73;
+    --accent: #c98a4b;
+    --text: #232323;
+    --muted: #6b6b6b;
+    --border: #e8e4dc;
+    --bg: #fbfaf7;
+    --card: #ffffff;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.65;
+  }
+  h1, h2, .serif { font-family: 'Fraunces', Georgia, serif; }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--teal) 100%);
+    padding: 72px 24px 88px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    right: -80px; top: -80px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+  }
+  .hero-icons { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+  .hero-icons svg {
+    position: absolute;
+    stroke: rgba(255,255,255,0.16);
+    fill: none;
+    stroke-width: 1.4;
+  }
+  .hero-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-top {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+  .hero-quote {
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
+    font-size: 16px;
+    color: #dce8ec;
+    border-left: 2px solid rgba(255,255,255,0.35);
+    padding-left: 16px;
+    max-width: 560px;
+    line-height: 1.55;
+  }
+  .hero-quote cite {
+    display: block;
+    font-style: normal;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: rgba(255,255,255,0.6);
+    margin-top: 8px;
+    letter-spacing: 0.02em;
+  }
+  .avatar {
+    width: 132px;
+    height: 132px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid rgba(255,255,255,0.85);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+    flex-shrink: 0;
+  }
+  .hero h1 {
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: 600;
+    margin: 0 0 6px;
+    letter-spacing: -0.01em;
+  }
+  .hero .location {
+    display: inline-block;
+    font-size: 12.5px;
+    color: #eef3f5;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.25);
+    padding: 3px 12px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    letter-spacing: 0.02em;
+  }
+  .hero .tagline {
+    font-size: 16px;
+    color: #dce8ec;
+    margin: 0 0 8px;
+    max-width: 480px;
+  }
+  .hero .now-line {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 13px;
+    color: #cfe8de;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 4px 12px 4px 8px;
+    border-radius: 20px;
+  }
+  .now-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: #6fe0a8;
+    box-shadow: 0 0 0 3px rgba(111,224,168,0.25);
+    flex-shrink: 0;
+  }
+
+  /* Body */
+  .wrap {
+    max-width: 760px;
+    margin: -40px auto 0;
+    padding: 0 24px 96px;
+    position: relative;
+    z-index: 2;
+  }
+  section {
+    margin-top: 52px;
+  }
+  h2.section-title {
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--navy);
+    margin: 0 0 6px;
+  }
+  .rule {
+    width: 46px;
+    height: 3px;
+    background: var(--accent);
+    border-radius: 2px;
+    margin-bottom: 24px;
+  }
+  p { margin: 0 0 12px; }
+
+  /* Connect pills */
+  .connect-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--navy);
+    background: var(--card);
+    border: 1px solid var(--border);
+    text-decoration: none;
+    padding: 9px 16px;
+    border-radius: 24px;
+    box-shadow: 0 1px 3px rgba(20,30,40,0.06);
+    transition: all 0.18s ease;
+  }
+  .pill:hover {
+    background: var(--navy);
+    color: #fff;
+    border-color: var(--navy);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(15,44,70,0.25);
+  }
+  .pill svg { width: 15px; height: 15px; flex-shrink: 0; }
+
+  /* Cards */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 16px;
+    box-shadow: 0 1px 3px rgba(20,30,40,0.05);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(20,30,40,0.09);
+  }
+  .card:last-child { margin-bottom: 0; }
+  .item-title {
+    font-weight: 600;
+    font-size: 16px;
+    margin: 0 0 3px;
+  }
+  .item-title a { color: var(--navy); text-decoration: none; }
+  .item-title a:hover { text-decoration: underline; }
+  .item-meta {
+    font-size: 13px;
+    color: var(--muted);
+    margin: 0 0 10px;
+  }
+  .item-desc {
+    font-size: 14.5px;
+    color: #333;
+    margin: 0;
+  }
+  .note {
+    font-size: 13px;
+    color: var(--muted);
+    font-style: italic;
+    margin-bottom: 18px;
+  }
+  .exp-role { font-weight: 600; font-size: 16px; margin: 0; }
+  .exp-org { font-size: 14.5px; color: var(--muted); margin: 2px 0 0; }
+  .exp-dates { font-size: 12.5px; color: var(--accent); font-weight: 600; letter-spacing: 0.02em; margin: 4px 0 0; }
+
+  /* Stat callouts */
+  .stat-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 12px 0 10px;
+  }
+  .stat-box {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 14px;
+    text-align: center;
+    min-width: 92px;
+  }
+  .stat-box .num {
+    display: block;
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.1;
+  }
+  .stat-box .lbl {
+    display: block;
+    font-size: 10.5px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-top: 2px;
+  }
+
+  /* GitHub live badges */
+  .badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 10px;
+  }
+  .badge-row img { height: 20px; display: block; }
+
+  /* Milestone timeline */
+  .timeline {
+    position: relative;
+    margin-left: 6px;
+    padding-left: 26px;
+    border-left: 2px solid var(--border);
+  }
+  .tl-item { position: relative; padding-bottom: 26px; }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-item::before {
+    content: "";
+    position: absolute;
+    left: -32px; top: 3px;
+    width: 11px; height: 11px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid var(--bg);
+    box-shadow: 0 0 0 2px var(--border);
+  }
+  .tl-date {
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .tl-title { font-weight: 600; font-size: 15px; margin: 2px 0 0; }
+
+  footer {
+    margin-top: 68px;
+    text-align: center;
+    font-size: 12.5px;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    padding-top: 22px;
+  }
+
+  @media (max-width: 480px) {
+    .hero-top { flex-direction: column; text-align: center; gap: 18px; }
+    .hero .tagline { max-width: 100%; }
+    .hero-quote { text-align: left; }
+    .avatar { width: 108px; height: 108px; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="hero">
+    <div class="hero-icons" aria-hidden="true">
+      <!-- git branch -->
+      <svg viewBox="0 0 24 24" style="width:54px; top:14%; left:6%; transform:rotate(-8deg);" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.4"/><circle cx="6" cy="18" r="2.4"/><circle cx="18" cy="9" r="2.4"/><path d="M6 8.4V15.6"/><path d="M6 12c0-3 4-3 4-6"/><path d="M12 6h3.8"/></svg>
+      <!-- GPU / chip -->
+      <svg viewBox="0 0 24 24" style="width:60px; top:62%; left:3%; transform:rotate(6deg);" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="1.5"/><rect x="9.5" y="9.5" width="5" height="5"/><path d="M9 2v3M12 2v3M15 2v3M9 19v3M12 19v3M15 19v3M2 9h3M2 12h3M2 15h3M19 9h3M19 12h3M19 15h3"/></svg>
+      <!-- network nodes -->
+      <svg viewBox="0 0 24 24" style="width:70px; top:8%; right:8%; transform:rotate(4deg);" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="5" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="12" cy="13" r="2.2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="18" r="2"/><path d="M6.5 6.3 10.3 11.5M17.3 7.2 13.4 11.7M10.6 14.7 6.4 17.6M13.6 14.6 17.5 17.1"/></svg>
+      <!-- terminal -->
+      <svg viewBox="0 0 24 24" style="width:52px; bottom:10%; right:16%; transform:rotate(-5deg);" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9l3 3-3 3M13 15h4"/></svg>
+      <!-- gear -->
+      <svg viewBox="0 0 24 24" style="width:46px; bottom:16%; left:22%; transform:rotate(10deg);" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><path d="M12 3v2.4M12 18.6V21M21 12h-2.4M5.4 12H3M18.1 5.9l-1.7 1.7M7.6 16.5l-1.7 1.7M18.1 18.1l-1.7-1.7M7.6 7.5 5.9 5.8"/></svg>
+    </div>
+    <div class="hero-inner">
+      <div class="hero-top">
+        <img src="Kinjal_Personal_Website_headshot.jpg" alt="Kinjal Vaishnav" class="avatar">
+        <div>
+          <span class="location">Seattle, WA</span>
+          <h1>Kinjal Vaishnav</h1>
+          <p class="tagline">Site Reliability Engineer · AI Infrastructure &amp; LLM Agent Systems · IEEE Senior Member</p>
+        </div>
+      </div>
+      <blockquote class="hero-quote">
+        "Single-agent LLM systems hit reliability ceilings when applied to production infrastructure observability tasks — the right response is architectural, not prompt-level."
+        <cite>— from her SSRN paper, "Why One Agent Is Never Enough"</cite>
+      </blockquote>
+    </div>
+  </div>
+
+  <div class="wrap">
+
+    <section id="about">
+      <h2 class="section-title">About</h2>
+      <div class="rule"></div>
+      <p>Kinjal is a Site Reliability Engineer with a decade of experience across telecom, network operations, and cloud infrastructure. Her current independent research focuses on multi-agent LLM architectures for infrastructure observability and predictive failure detection — work she develops and publishes outside of her full-time role.</p>
+      <p>She is an IEEE Senior Member and publishes open, reproducible research with public reference implementations backing each paper.</p>
+    </section>
+
+    <section id="connect">
+      <h2 class="section-title">Connect</h2>
+      <div class="rule"></div>
+      <div class="connect-links">
+        <a class="pill" href="https://linkedin.com/in/kinjalozavaishnav" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+          LinkedIn
+        </a>
+        <a class="pill" href="https://github.com/Kinjal-Oza" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.46-1.19-1.11-1.51-1.11-1.51-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.89 1.57 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05a9.28 9.28 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>
+          GitHub
+        </a>
+        <a class="pill" href="https://orcid.org/0009-0005-6073-1117" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM7.37 7.24c.63 0 1.14.51 1.14 1.14s-.51 1.13-1.14 1.13-1.13-.51-1.13-1.13.5-1.14 1.13-1.14zM6.65 10.4h1.44v7.14H6.65V10.4zm3.03 0h2.76c2.63 0 3.84 1.88 3.84 3.57 0 1.85-1.44 3.57-3.82 3.57h-2.78V10.4zm1.44 1.25v4.65h1.22c1.87 0 2.5-1.35 2.5-2.33 0-1.26-.79-2.32-2.53-2.32h-1.19z"/></svg>
+          ORCID
+        </a>
+        <a class="pill" href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=12388331" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm8 1.5V8h4.5L14 3.5zM8.8 16.9c-1.5 0-2.5-.7-2.5-1.9h1.4c0 .6.5.9 1.1.9.6 0 1-.3 1-.8 0-.4-.3-.6-1-.8l-.7-.2c-1.1-.3-1.7-.9-1.7-1.8 0-1.1 1-1.9 2.3-1.9 1.4 0 2.3.8 2.3 1.9h-1.4c0-.5-.4-.8-.9-.8-.5 0-.9.3-.9.7 0 .4.3.6.9.7l.7.2c1.2.3 1.8.9 1.8 1.9 0 1.2-1 2-2.4 2z"/></svg>
+          SSRN
+        </a>
+        <a class="pill" href="mailto:kinjal.oza61@yahoo.com">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 5.5A1.5 1.5 0 0 1 3.5 4h17A1.5 1.5 0 0 1 22 5.5v13a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 2 18.5v-13zm2.2.5 7.8 6.1L19.8 6H4.2zM20 7.9l-7.6 5.9a1 1 0 0 1-1.2 0L4 7.9V18h16V7.9z"/></svg>
+          Email
+        </a>
+      </div>
+    </section>
+
+    <section id="publications">
+      <h2 class="section-title">Publications</h2>
+      <div class="rule"></div>
+      <p class="note">Independent research, not affiliated with or endorsed by any employer. All results are from synthetic/simulated data, validated through prototyping rather than at-scale production deployment.</p>
+
+      <div class="card">
+        <p class="item-title"><a href="https://doi.org/10.2139/ssrn.7125618" target="_blank" rel="noopener">Why One Agent Is Never Enough: A Multi-Agent Architecture for Infrastructure Observability</a></p>
+        <p class="item-meta">SSRN · DOI 10.2139/ssrn.7125618 · Posted July 2026</p>
+        <p class="item-desc">A four-agent architecture — Supervisor, Telemetry Investigation, Reasoning, and Action — coordinated through typed shared state for infrastructure incident investigation. Includes a documented set of multi-agent failure modes and a public LangGraph reference implementation.</p>
+        <div class="stat-row">
+          <div class="stat-box"><span class="num">1.00</span><span class="lbl">Falsifier Precision</span></div>
+          <div class="stat-box"><span class="num">0.64</span><span class="lbl">Action Precision</span></div>
+          <div class="stat-box"><span class="num">100</span><span class="lbl">Synthetic Incidents</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <p class="item-title"><a href="https://doi.org/10.5281/zenodo.21500285" target="_blank" rel="noopener">Predictive GPU Failure Detection via Continuous Health Scoring: A Reproducible Study on Synthetic Fleet Telemetry</a></p>
+        <p class="item-meta">Zenodo · DOI 10.5281/zenodo.21500285 · CC-BY 4.0 · Published July 2026</p>
+        <p class="item-desc">Treats each GPU as a stateful entity with a continuous health score estimating near-term failure risk from telemetry trends. On a held-out synthetic set of 500 GPUs, the health score warns a median of 24 hours before failure at a 90% precision operating point, versus 2 hours for a static-threshold baseline.</p>
+        <div class="stat-row">
+          <div class="stat-box"><span class="num">24h</span><span class="lbl">Median Warning (vs 2h)</span></div>
+          <div class="stat-box"><span class="num">81%</span><span class="lbl">Failures Caught (vs 54%)</span></div>
+          <div class="stat-box"><span class="num">0.78</span><span class="lbl">PR-AUC</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="opensource">
+      <h2 class="section-title">Open Source</h2>
+      <div class="rule"></div>
+      <p class="note">All projects are independent, MIT-licensed prototypes built with synthetic data and mocked infrastructure — not derived from or connected to any employer's systems.</p>
+
+      <div class="card">
+        <p class="item-title"><a href="https://github.com/Kinjal-Oza/multi-agent-observability-demo" target="_blank" rel="noopener">multi-agent-observability-demo</a></p>
+        <p class="item-desc">Reference implementation for the multi-agent SSRN paper. LangGraph-based four-agent pipeline with deterministic mocked tools, an adversarial falsifier module, and an in-repo benchmark on 100 synthetic incidents.</p>
+      </div>
+
+      <div class="card">
+        <p class="item-title"><a href="https://github.com/Kinjal-Oza/gpu-health-scoring" target="_blank" rel="noopener">gpu-health-scoring</a></p>
+        <p class="item-desc">Reference implementation backing the Zenodo paper — open, reproducible synthetic GPU telemetry simulator and health-scoring model.</p>
+      </div>
+
+      <div class="card">
+        <p class="item-title"><a href="https://github.com/Kinjal-Oza/llm-network-agent-demo" target="_blank" rel="noopener">llm-network-agent-demo</a></p>
+        <p class="item-desc">Four-agent pipeline for network automation reasoning, 54 passing tests, fully reproducible with no API key required.</p>
+      </div>
+
+      <div class="card">
+        <p class="item-title"><a href="https://github.com/Kinjal-Oza/self-healing-alerting-system" target="_blank" rel="noopener">self-healing-alerting-system</a></p>
+        <p class="item-desc">Synthetic-data benchmark exploring adaptive alert filtering to reduce false-positive volume while preserving detection precision.</p>
+      </div>
+    </section>
+
+    <section id="press">
+      <h2 class="section-title">Press</h2>
+      <div class="rule"></div>
+      <div class="card">
+        <p class="item-title"><a href="https://www.dice.com/career-advice/the-new-junior-developer-harder-to-land-harder-to-replace" target="_blank" rel="noopener">"The New Junior Developer: Harder to Land, Harder to Replace"</a></p>
+        <p class="item-meta">Dice.com Career Advice · by Brian T. Horowitz · July 2026</p>
+        <p class="item-desc">Quoted on the impact of AI tooling on early-career developer roles.</p>
+      </div>
+    </section>
+
+    <section id="community">
+      <h2 class="section-title">Community Involvement</h2>
+      <div class="rule"></div>
+      <div class="card">
+        <p class="item-title">Volunteer Judge — MLH (Major League Hacking)</p>
+        <p class="item-meta">DEV Weekend Challenge: Passion Edition · 2026</p>
+      </div>
+      <div class="card">
+        <p class="item-title">IEEE Senior Member</p>
+        <p class="item-meta">Elevated 2026 · IEEE Computer Society</p>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2 class="section-title">Professional Experience</h2>
+      <div class="rule"></div>
+
+      <div class="card">
+        <p class="exp-role">Site Reliability Engineer III</p>
+        <p class="exp-org">Oracle Cloud Infrastructure</p>
+        <p class="exp-dates">JUNE 2025 – PRESENT</p>
+      </div>
+
+      <div class="card">
+        <p class="exp-role">Senior Software Engineer</p>
+        <p class="exp-org">T-Mobile · Network Reliability &amp; Platform Engineering</p>
+        <p class="exp-dates">JULY 2018 – NOVEMBER 2023</p>
+      </div>
+
+      <div class="card">
+        <p class="exp-role">Business Planning Analyst</p>
+        <p class="exp-org">Avaya</p>
+        <p class="exp-dates">JANUARY 2015 – DECEMBER 2017</p>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2 class="section-title">Education &amp; Credentials</h2>
+      <div class="rule"></div>
+      <div class="card">
+        <p class="item-title">MS, Computer Systems Networking &amp; Telecommunications</p>
+        <p class="item-meta">Northeastern University · 2014</p>
+      </div>
+      <div class="card">
+        <p class="item-title">BE, Electronics &amp; Telecommunication</p>
+        <p class="item-meta">University of Mumbai · 2012</p>
+      </div>
+    </section>
+
+    <footer>
+      © 2026 Kinjal Vaishnav
+    </footer>
+
+  </div>
+</body>
+</html>
